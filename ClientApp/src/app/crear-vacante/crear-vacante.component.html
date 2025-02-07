@@ -1,0 +1,64 @@
+<head>
+    <meta *ngIf="!role.isJefe()" http-equiv='refresh' content='0; /#/not-found'>
+  </head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+  rel="stylesheet">
+
+<body style="padding-top: 50px;">
+  <div class="centerer">
+    <!-- a partir de aquí, cada bloque de texto dentro de un div estará centrado y dirigido hacia abajo -->
+
+    <div class="he-tag2">
+        <div class="my-tag">
+            <h1 class="Lora">Crear nueva vacante</h1>
+          </div>
+    </div>
+    <!-- Esta sección debe adquirir todos los elementos del docente -->
+    <div class="spacing-tag"></div>
+    <div style="align-content: stretch; width:60%;">
+        <form [formGroup]="vacanteForm" (ngSubmit)="submitForm()">
+            <div class="field">
+                <label class="label">Nombre de la Vacante:</label>
+                <input type="text" formControlName="nombreVacante" maxlength="50" placeholder="El título no debe tener más de 50 caracteres." required>
+                <span></span>
+            </div>
+
+            <div class="field">
+                <label class="label">Materia:</label>
+                <select formControlName="materia" required>
+                    <option *ngFor="let materia of materias" [ngValue]="materia.sigla">{{ materia.nombre }}</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label class="label">Descripcion de la vacante:</label>
+                <textarea class="bigInput" formControlName="descripcionVacante" maxlength="300" placeholder="Introduce una descirpción (máx. caracteres: 300)." required>
+                </textarea>
+                <span></span>
+            </div>
+
+            <div class="field">
+                <label class="label">Fecha de inicio:</label>
+                <input type="date" formControlName="fechaInicio" required>
+                <span></span>
+            </div>
+
+
+            <div class="field">
+                <label class="label">Fecha de finalizacion:</label>
+                <input type="date" formControlName="fechaFinalizacion" required>
+                <span></span>
+            </div>
+            <div style="padding-top: 5%;"></div>
+            <button type="submit" class="ButtonA">
+                Crear Vacante
+            </button>
+
+        </form>
+    </div>
+  </div>
+  <div class="footer-spacing-tag"></div>
+  <app-footer></app-footer>
+</body>

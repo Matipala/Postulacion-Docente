@@ -1,0 +1,194 @@
+<head>
+  <meta *ngIf="role.isJefe()" http-equiv='refresh' content='0; /#/not-found'>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+  rel="stylesheet">
+
+<body style="padding-top: 50px;">
+  <div id="content-wrap">
+    <div class="centerer">
+      <!-- a partir de aquí, cada bloque de texto dentro de un div estará centrado y dirigido hacia abajo -->
+
+      <div class="my-tag">
+        <h1 class="Lora">Universidad Católica</h1>
+        <h3>Formamos profesionales con un alto espíritu, superación, innovación y educación</h3>
+      </div>
+
+      <div class="ucb-section">
+        <div class="overlay"></div>
+        <div class="text-left">
+          <h1>Datos de la UCB</h1>
+        </div>
+        <div class="text-right">
+          <h4>Pasion, Motivacion, Trabajo, Perseverancia. Hasta llegar a la meta</h4>
+        </div>
+      </div>
+
+
+      <div class="he-tag">
+        <div class="text_center">
+          <h3>Datos de la UCB</h3>
+        </div>
+        <p class="bigText">Como una de las mejores universidades del país, la U.C.B. impulsa el progreso de la sociedad
+          boliviana formando el talento humano de los profesionales en distintas ramas del conocimiento, para resolver
+          los problemas emergentes del contexto social y aportar con soluciones desde la perspectiva académica. Los
+          graduados de la Universidad Católica Boliviana “San Pablo” han sido y son los principales actores y líderes de
+          la conducción tanto en instituciones públicas como las más reconocidas organizaciones privadas, con lo cual se
+          ha ganado el prestigio y reconocimiento de la sociedad boliviana. Tenemos mas de 35,000 graduados, 32
+          carreras, 6 modalidades de becas academicas, 210 convenios suscritos a nivel nacional e internacional</p>
+
+        <div class="latest-news">
+          <h3>Últimas Noticias</h3>
+          <div class="container">
+            <!-- Card 1 (sin descripción adicional) -->
+            <div class="card">
+              <img class="card__icon" src="../../assets/images/Noticia1.jpg">
+              <div class="card__content">
+                <p class="card__description">Arrancó la Semana del Joint Steering Committee del Proyecto CReA UCB en la
+                  sede Tarija
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 2 con cuadro de descripción separado -->
+            <div class="card">
+              <img class="card__icon" src="../../assets/images/Noticia2.jpg">
+              <div class="card__content">
+                <p class="card__description">Empezo la escuela ECL24 Complutense Latinoamericana 2024 en nuestra sede de
+                  Santa Cruz de la Sierra(Bolivia)</p>
+              </div>
+            </div>
+
+            <!-- Card 3 con cuadro de descripción separado -->
+            <div class="card">
+              <img class="card__icon" src="../../assets/images/Noticia3.jpg">
+              <div class="card__content">
+                <p class="card__description">Rectorado Nacional de la U.C.B. inaugura y bendice sus nuevas instalaciones
+                  con el objetivo de brindar un mayor y mejor servicio a toda la universidad
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 4 con cuadro de descripción separado -->
+            <div class="card">
+              <img class="card__icon" src="../../assets/images/Noticia4.jpg">
+              <div class="card__content">
+                <p class="card__description">Preparate para el Taller de entrenamiento ICPC 2024 con nuestros super
+                  cronogramas de actividades</p>
+              </div>
+            </div>
+
+            <!-- Card 5 con cuadro de descripción separado -->
+            <div class="card">
+              <img class="card__icon" src="../../assets/images/Noticia5.jpg">
+              <div class="card__content">
+                <p class="card__description">La U.C.B. lidera investigaciones para proteger derechos de comunidades
+                  indígenas chiquitanas</p>
+              </div>
+            </div>
+
+            <!-- Card 6 sin descripción adicional -->
+            <div class="card">
+              <img class="card__icon" src="../../assets/images/Noticia6.jpg">
+              <div class="card__content">
+                <p class="card__description">La U.C.B. y UNITAS: fortaleciendo lazos entre la academia y la sociedad
+                  civil
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="our-careers">
+          <div class="rectangulo">
+            <div class="over">
+              <div class="rectangulo_carton">
+                <h2 class="titulo-rectangulo">Nuestras Carreras</h2>
+                <button class="boton-rectangulo"
+                  onclick="window.location.href='https://scz.ucb.edu.bo/#'">Conoce
+                  más...</button>
+              </div>
+            </div>
+            <!-- Rectángulos pequeños en 3x2 a la derecha -->
+            <div class="rectangulos-pequenos">
+              <div class="rectangulo-pequeno">
+                <p class="texto-pequeno">Arquitectura y Diseño</p>
+              </div>
+              <div class="rectangulo-pequeno">
+                <p class="texto-pequeno">Filosofia y Letras</p>
+              </div>
+              <div class="rectangulo-pequeno">
+                <p class="texto-pequeno">Ciencias de Salud</p>
+              </div>
+              <div class="rectangulo-pequeno">
+                <p class="texto-pequeno">Ingenierias Tecnologicas</p>
+              </div>
+              <div class="rectangulo-pequeno">
+                <p class="texto-pequeno">Ingenieria Mecánica</p>
+              </div>
+              <div class="rectangulo-pequeno">
+                <p class="texto-pequeno">Ingenieria Química</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="community">
+          <h3 [routerLink]="['/comunidad']" style="cursor: pointer;">Comunidad</h3>
+          <div class="comunidad-cuadro">
+            <div class="tarjeta">
+              <img class="tarjeta__icon" src="../../assets/images/Comunidad1.png">
+            </div>
+
+            <div class="tarjeta">
+              <img class="tarjeta__icon" src="../../assets/images/Comunidad2.png">
+            </div>
+
+            <div class="tarjeta">
+              <img class="tarjeta__icon" src="../../assets/images/Comunidad3.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="faculty">
+          <h3>Plantel Docente</h3>
+          <div class="faculty-grid">
+            <ul>
+              <li>Antelo Liliana</li>
+              <li>Cabrera Ovando Mirtha Patricia</li>
+              <li>Hurtado Mendez Teresa</li>
+              <li>Antelo Liliana</li>
+              <li>Cabrera Ovando Mirtha Patricia</li>
+              <li>Hurtado Mendez Teresa</li>
+              <li>Justiniano Dominguez Maria Delia</li>
+              <li>Padilla Vaca Maria Del Carmen</li>
+              <li>Pelaez Mena Jessika Patricia</li>
+              <li>Pinto Nicodemo Herland Henry</li>
+              <li>Rojo Lopez Fanor</li>
+              <li>Rosales Hinojosa Vany Noelia</li>
+              <li>Santa Cruz Terrazas Mariana</li>
+            </ul>
+            <ul>
+              <li>Camacho Moreno Margarita Marcia</li>
+              <li>Cruz Peña Jaqueline</li>
+              <li>Cuellar Algarañaz Geraldine</li>
+              <li>Guardia Ruiz Juan Marcelo</li>
+              <li>Linares Montaño Duglas Luis</li>
+              <li>Marcos Menacho Maria Alejandra</li>
+              <li>Mendez Campos Mayra Gisel</li>
+              <li>Perez Cosio Valeria Ivonne</li>
+              <li>Ponton Vargas Yenn</li>
+              <li>Rocha Flores Rosalba Liliana</li>
+              <li>Rodriguez Barrancos Ana Marcela</li>
+              <li>Soriano Rivarola Andrea Viviana</li>
+              <li>Suarez Noya Miguel Angel</li>
+              <li>Torrez Viruez Melisa</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</body>

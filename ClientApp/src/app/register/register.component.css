@@ -1,0 +1,173 @@
+.registerBackground {
+    background-image: url("../../assets/images/image.jpg");
+    align-self:stretch;
+    width: 100vw;
+    min-height: 100vh;
+    position:absolute;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.registro-container {
+    width: 70vw;
+    background-color: #ffffffaa;
+    padding-top: 10px;
+    border-radius: 30px;
+    box-shadow: 0px 4px 10px #0000001a;
+    box-sizing: border-box;
+}
+
+
+h2 {
+    text-align: center;
+    margin-bottom: 3%;
+    font-weight: medium;
+    font-size: xx-large;
+    margin-top: 3%;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+label {
+    width: 25%;
+    margin: 0;
+    text-align: right;
+    font-weight: medium;
+    font-size: 20px;
+}
+
+input {
+    width: 55%;
+    padding: 10px;
+    border: 2px solid #0000008a;
+    border-radius: 10px;
+    background-color: #ffffff80;
+}
+
+
+textarea {
+   
+    width: 55%;
+    padding: 10px;
+    border: 2px solid #0000008a;
+    border-radius: 10px;
+    background-color: #ffffff80;
+    
+}
+
+
+button {
+    display: block;
+    width: 25%;
+    padding: 15px;
+    background-color: #2d5784;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin: 20px auto;
+    text-align: center;
+    font-weight: medium;
+    font-size: 20px;
+    transition-duration: 150ms;
+}
+
+
+button:hover {
+    background-color: #00427A;
+    transition-duration: 250ms;
+}
+
+button:active {
+    background-color: #00274a;
+    transition-duration: 50ms;
+}
+
+p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+select[multiple] {
+    width: 55%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    height: 90px;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}
+
+.career-selection {
+    padding: 20px;
+    background-color: #ffffffa2;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px #0000001a;
+    width: 500px;
+    /* Ancho del cuadro ajustado */
+    margin: 20px auto;
+}
+
+.career-selection legend {
+    font-size: 24px;
+    /* Tamaño del texto en el legend ajustado */
+    color: #333;
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+.career-option {
+    margin-bottom: 12px;
+}
+
+.career-option input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.2);
+}
+
+.career-option label {
+    font-size: 18px;
+    /* Tamaño del texto de las etiquetas ajustado */
+    color: #333;
+}
+
+.career-option input[type="checkbox"]:hover {
+    cursor: pointer;
+}
+
+span {
+    max-width: 15%;
+}
+
+input:invalid {
+    outline-color: red;
+    border-color: red;
+}
+
+input:invalid + span::before {
+    content: 'El campo no puede estar vacío';
+    color: red;
+}
+
+input:valid + span::before {
+    content: none;
+}
+
+input:invalid + .emailSpan::before {
+    content: 'Usa un correo válido';
+    color: red;
+}
+
+input:invalid + .passSpan::before {
+    content: 'La contraseña necesita 4 caracteres mínimo';
+    color: red;
+}

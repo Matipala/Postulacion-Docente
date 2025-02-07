@@ -1,0 +1,83 @@
+<head>
+    <meta *ngIf="!role.isJefe()" http-equiv='refresh' content='0; /#/not-found'>
+  </head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+  rel="stylesheet">
+
+<body style="padding-top: 50px;">
+  <div class="centerer">
+    <!-- a partir de aquí, cada bloque de texto dentro de un div estará centrado y dirigido hacia abajo -->
+
+    <div class="he-tag2">
+        <div class="my-tag">
+            <h1 class="Lora">Cambiar datos</h1>
+          </div>
+    </div>
+    <!-- Esta sección debe adquirir todos los elementos del director -->
+    <div class="spacing-tag" ></div>
+    <form style="width: 60%;" [formGroup]="nuevosDatosJefeForm">
+        <div style="align-content: stretch; width:100%;">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" formControlName="nuevoNombre">
+                <span></span>
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" formControlName="nuevoCorreo">
+                <span class="emailSpan"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="fechaNacimiento">Fecha de nacimiento: </label>
+                <input type="date" id="fechaNacimiento" formControlName="nuevaFechaNacimiento">
+                <span></span>
+            </div>
+
+            <div class="form-group">
+                    <label for="telefono">Numero de telefono: </label>
+                    <input type="text" id="numeroTelefono" formControlName="nuevoNumeroTelefono">
+                    <span></span>
+            </div>
+
+            <!-- <fieldset class="career-selection">
+                <legend>Selecciona 1 a 3 carreras</legend>
+                <div class="career-option" *ngFor="let carrera of listaCarreras">
+                    <input type="checkbox" [id]="carrera" [value]="carrera.sigla" (change)="onCarreraChange($event)"
+                        [checked]="isCarreraSelected(carrera)" />
+                    <label [for]="carrera">{{ carrera.nombreCarrera }}</label>
+                </div>
+            </fieldset> -->
+
+            <div class="form-group">
+                <label for="contrasena">Nueva contraseña:</label>
+                <input type="password" id="contrasena" formControlName="nuevaContrasenha">
+            </div>
+            <div class="form-group">
+                <label for="confirmarContrasena">Confirmar nueva contraseña:</label>
+                <input type="password" id="confirmarContrasena" formControlName="nuevaContrasenhaRep">
+            </div>
+
+            <div class="form-group">
+                <label for="confirmarCambios">Confirmar cambios:</label>
+                <input type="password" id="confirmarCambios" formControlName="contrasenhaActual" required placeholder="Introduzca su contraseña anterior para guardar los cambios.">
+                <span class="passSpan"></span>
+            </div>
+        </div>
+        <div style="padding-top: 1%; display:flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly; width:100%">
+            <div>
+                <button class="ButtonA" (click)="CambiarDatosJefe()">Guardar cambios</button>
+            </div>
+            <div>
+                <button class="ButtonB" [routerLink]="['/profile-jefe']">Descartar cambios</button>
+            </div>
+        </div>
+
+    </form>
+  </div>
+  <div class="footer-spacing-tag"></div>
+  <app-footer></app-footer>
+</body>

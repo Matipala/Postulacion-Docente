@@ -1,0 +1,40 @@
+<head>
+  <meta *ngIf="role.isJefe()" http-equiv='refresh' content='0; /#/not-found'>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+  rel="stylesheet">
+
+<body style="padding-top: 50px;">
+  <div class="centerer">
+    <!-- a partir de aquí, cada bloque de texto dentro de un div estará centrado y dirigido hacia abajo -->
+
+    <div class="he-tag2">
+        <div class="my-tag">
+            <h1 class="Lora">Vacantes</h1>
+        </div>
+    </div>
+
+    <div class="he-tag">
+      <p>
+        Damos gran importancia a la diversidad y la inclusión. Es por eso que la Universidad Católica Boliviana ​​​​ofrece a todos los empleados y solicitantes las mismas oportunidades, independientemente de su orientación, identidad o procedencia. Esperamos darle la bienvenida a nuestra comunidad.
+        ¿Le gustaría recibir vacantes interesantes directamente en su buzón de correo? ¡Haga clic en registrarse para crear un perfil y configurar una alerta de empleo!. Damos gran importancia a la diversidad y la inclusión. Es por eso que la Universidad Católica Boliviana ​​​​ofrece a todos los empleados y solicitantes las mismas oportunidades, independientemente de su orientación, identidad o procedencia. Esperamos darle la bienvenida a nuestra comunidad.
+      </p>
+    </div>
+    <div style="margin: 10px;"></div>
+
+<!-- A partir de aquí, hacer un for loop o algo así para meter cada vacante activa -->
+
+    <div class="vacante-border" *ngFor="let vacante of vacantes">
+        <div class="vacante-margin" [routerLink]="['/postularse', vacante.vacanteId]">
+            <h5>{{ vacante.nombreVacante }}: {{ vacante.materia }}</h5>
+            <p class="overflow">{{ vacante.descripcionVacante }}</p>
+        </div>
+    </div>
+
+
+  </div>
+  <div class="footer-spacing-tag"></div>
+  <app-footer></app-footer>
+</body>

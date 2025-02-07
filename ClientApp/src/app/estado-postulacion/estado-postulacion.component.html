@@ -1,0 +1,32 @@
+<head>
+  <meta *ngIf="role.isJefe()" http-equiv='refresh' content='0; /#/not-found'>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+  rel="stylesheet">
+
+<body style="padding-top: 50px;">
+  <div class="centerer">
+    <div class="he-tag2">
+        <div class="my-tag">
+            <h1 class="Lora">{{ postulacion?.tituloMateria }}</h1>
+          </div>
+    </div>
+    <div class="spacing-tag"></div>
+
+    <div class="he-tag">
+      <h3>Información:</h3>
+      <p>{{ postulacion?.descripcionEstado }}
+      </p>
+      <h3>Detalles de la vacante:</h3>
+      <p>{{ postulacion?.descripcionVacante }}
+      </p>
+      <h3>Contactar a: </h3>
+      <p>{{ postulacion?.jefeNombre }} </p>
+      <p>{{ postulacion?.jefeCorreo }}</p>
+    </div>
+  </div>
+  <div class="footer-spacing-tag"></div>
+  <app-footer></app-footer>
+</body>

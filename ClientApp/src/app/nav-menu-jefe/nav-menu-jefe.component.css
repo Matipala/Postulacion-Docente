@@ -1,0 +1,45 @@
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+  }
+  
+  .header1-text {
+    font-size: 11px;
+  }
+  
+  .header1-text-fix {
+    padding-top: 5px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  
+  .header1 {
+    background-color: #FFCB08;
+    height: 32px;
+  }
+  
+  .header2 {
+    height: 68px;
+  }
+  
+  html {
+    font-size: 14px;
+  }
+  
+  @media (min-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+  }
+  
+  .box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  }
+  
+  .header2-logo {
+    background: url('../../assets/images/logo_text.png') no-repeat center;
+    background-size: 100px 50px;
+    width: 100px;
+    height: 50px;
+  }

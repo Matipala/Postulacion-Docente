@@ -1,0 +1,149 @@
+<div class="registerBackground">
+    <div class="registro-container">
+        <h2>Registro</h2>
+        <!-- Botón para alternar entre campos generales y jefe de carrera -->
+
+        <div class="form-group toggle-container">
+            <button type="button" (click)="toggleJefeCarrera()" class="toggle-btn">
+                {{ isJefeCarrera ? 'Registrarse como Usuario General' : 'Registrarse como Jefe de Carrera' }}
+            </button>
+        </div>
+
+        <form [formGroup]="registerFormDocente" *ngIf="!isJefeCarrera">
+            
+            <!-- Campos para el postulante -->
+            <div *ngIf="!isJefeCarrera">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" formControlName="nombre" required>
+                    <span></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono: </label>
+                    <input type="text" id="telefono" formControlName="telefono" required pattern=".{8,}">
+                    <span></span>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="ci">CI:</label>
+                    <input type="text" id="ci" formControlName="ci" required pattern="[0-9a-zA-z]+">
+                    <span></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                    <input type="date" id="fechaNacimiento" formControlName="fechaNacimiento" required>
+                    <span></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcionPersonal">Descripcion personal:</label>
+                    <textarea name="" id="" cols="10" rows="5" formControlName="descripcionPersonal" style="width: 55%;"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="especialidad">Especialidad Materia: <span class="required"></span></label>
+                    <input type="text" id="especialidad" formControlName="especialidad" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="grado">Grado:</label>
+                    <input type="text" id="grado" formControlName="grado" required>
+                    <span></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="anosExperiencia">Años de Experiencia: </label>
+                    <input type="number" id="anhosExperiencia" formControlName="anhosExperiencia" required min="0">
+                    <span></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" formControlName="correo" required>
+                    <span class="emailSpan"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="contrasena">Contraseña: </label>
+                    <input type="password" id="contrasena" formControlName="contrasenha" required pattern=".{4,}">
+                    <span class="passSpan"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmarContrasena">Confirmar Contraseña: <span class="required"></span></label>
+                    <input type="password" id="confirmarContrasena" formControlName="contrasenhaRep" required pattern=".{4,}">
+                    <span class="passSpan"></span>
+                </div>
+
+            </div>
+
+          
+            
+            <!-- Botón de registro -->
+            <button type="submit" (click)="registrarUsuario()">Registrarse</button>
+        </form>
+
+          <!-- Campos específicos para Jefe de Carrera -->
+        <form action="" *ngIf="isJefeCarrera" [formGroup]="registerFormJefe">
+            <div *ngIf="isJefeCarrera">
+                <div class="form-group">
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" id="nombre" formControlName="nombre" required>
+                    <span></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono: </label>
+                    <input type="text" id="telefono" formControlName="telefono" required pattern=".{8,}">
+                    <span></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="ci">CI:</label>
+                    <input type="text" id="ci" formControlName="ci" required pattern="[0-9a-zA-z]+">
+                    <span></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="fechaNacimiento">Fecha de Nacimiento: </label>
+                    <input type="date" id="fechaNacimiento" formControlName="fechaNacimiento" required>
+                    <span></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="correoJefe">Correo: <span class="required"></span></label>
+                    <input type="email" id="correoJefe" formControlName="correo" required>
+                    <span class="emailSpan"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="contrasenaJefe">Contraseña: <span class="required"></span></label>
+                    <input type="password" id="contrasenaJefe" formControlName="contrasenha" required pattern=".{4,}">
+                    <span class="passSpan"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmarContrasenaJefe">Confirmar Contraseña: <span class="required"></span></label>
+                    <input type="password" id="confirmarContrasenaJefe" formControlName="contrasenhaRep" required pattern=".{4,}">
+                </div>
+                
+                <fieldset class="career-selection">
+                    <legend>Selecciona 1 a 3 carreras</legend>
+                    <div class="career-option" *ngFor="let carrera of listaCarreras">
+                        <input type="checkbox" [id]="carrera" [value]="carrera.sigla" (change)="onCarreraChange($event)"
+                            [checked]="isCarreraSelected(carrera)" />
+                        <label [for]="carrera">{{ carrera.nombreCarrera }}</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <button type="submit" (click)="registrarUsuario()">Registrarse</button>
+        </form>
+
+        <p style="font-weight: 600;">¿Ya tienes una cuenta? <a [routerLink]="['/login']">Inicia sesión</a></p>
+    </div>
+</div>

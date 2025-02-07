@@ -1,0 +1,41 @@
+<head>
+  <meta *ngIf="role.isJefe()" http-equiv='refresh' content='0; /#/not-found'>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+  rel="stylesheet">
+
+<body style="padding-top: 50px;">
+  <div class="centerer">
+    <!-- a partir de aquí, cada bloque de texto dentro de un div estará centrado y dirigido hacia abajo -->
+
+    <div class="he-tag2">
+        <div class="my-tag">
+            <h1 class="Lora">Perfil</h1>
+          </div>
+    </div>
+    <div class="spacing-tag"></div>
+    <div class="he-tag">
+      <p>
+        Nombre: {{ docente?.nombre }}<br>
+        Teléfono: {{ docente?.telefono }}<br>
+        CI: {{ docente?.ci }}<br>
+        Materia: {{ docente?.materia }}<br>
+        Grado: {{ docente?.grado }}<br>
+        Correo: {{ docente?.correo }}<br>
+      </p>
+    </div>
+
+    <div style="padding-top: 5%; display:flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly; width:30%">
+      <div>
+        <button (click)="getPdf()" class="loginButtonA">Generar PDF</button>
+      </div>
+      <div>
+          <button class="ButtonB" [routerLink]="['/cambiar-datos-postulante']">Cambiar datos</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-spacing-tag"></div>
+  <app-footer></app-footer>
+</body>

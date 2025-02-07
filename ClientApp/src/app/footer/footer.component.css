@@ -1,0 +1,33 @@
+.footer{
+    background-color: #00427A;
+    color:white;
+    height: 30vh;
+    bottom: 0;
+    width: auto;
+}
+
+.in-columns{
+    display:flex;
+    flex-direction: row;
+    text-align: center;
+    align-content: space-evenly;
+}
+
+.row{
+    max-width: 30%;
+    padding-top: 2%;
+    padding-bottom: 1%;
+}
+
+.row-img {
+    background-image: url('../../assets/images/logo_lowres.png');
+    background-size:contain;
+    padding-top: 14%;
+    width: 13%;
+    margin-top: 1em;
+    background-repeat: no-repeat;
+}
+
+a {
+    color:aliceblue;
+}

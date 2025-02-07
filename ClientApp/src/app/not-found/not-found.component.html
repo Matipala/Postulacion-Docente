@@ -1,0 +1,32 @@
+<!-- <head>
+  <meta http-equiv='refresh' content='0; /#/not-found'>
+</head> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+  rel="stylesheet">
+
+<body style="padding-top: 50px;">
+  <div class="centerer">
+    <!-- a partir de aquí, cada bloque de texto dentro de un div estará centrado y dirigido hacia abajo -->
+
+    <div class="he-tag2">
+        <div class="my-tag">
+            <h2 class="Lora">Página no encontrada...</h2>
+          </div>
+    </div>
+    
+    <div class="spacing-tag"></div>
+
+    <div class="he-tag">
+      <h3 style="width:100vh; ">La página que buscas no existe.</h3>
+      <p>Se sugiere que utilice únicamente los vínculos disponibles al navegar por la interfaz,
+        para regresar a una página anterior, puede usar alt+izquierda o el atajo de su navegador actual.
+      </p>
+      <a *ngIf="!role.isJefe()" [routerLink]="['/']">Volver a la página principal</a>
+      <a *ngIf="role.isJefe()" [routerLink]="['/jefe']">Volver a la página principal</a>
+    </div>
+  </div>
+  <div class="footer-spacing-tag"></div>
+  <app-footer></app-footer>
+</body>

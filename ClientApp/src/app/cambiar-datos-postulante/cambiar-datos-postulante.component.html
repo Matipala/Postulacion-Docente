@@ -1,0 +1,99 @@
+<head>
+    <meta *ngIf="role.isJefe()" http-equiv='refresh' content='0; /#/not-found'>
+  </head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+  rel="stylesheet">
+
+<body style="padding-top: 50px;">
+  <div class="centerer">
+    <!-- a partir de aquí, cada bloque de texto dentro de un div estará centrado y dirigido hacia abajo -->
+
+    <div class="he-tag2">
+        <div class="my-tag">
+            <h1 class="Lora">Cambiar datos</h1>
+          </div>
+    </div>
+    <!-- Esta sección debe adquirir todos los elementos del docente -->
+    <div class="spacing-tag"></div>
+
+    <form action="" [formGroup]="cambiarDatosForm" style="width: 60%;">
+        <div style="align-content: stretch; width:100%;">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" formControlName="nombre" required>
+                <span></span>
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono" formControlName="telefono" required>
+                <span></span>
+            </div>
+
+            <div class="form-group">
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fechaNacimiento" formControlName="fechaNacimiento" required>
+                <span></span>
+            </div>
+
+            <div class="form-group">
+                <label for="descripcionPersonal">Descripcion personal:</label>
+                <textarea name="" id="" cols="10" rows="5" formControlName="descripcionPersonal" style="width: 55%;"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" formControlName="correo" required>
+                <span class="emailSpan"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="materia">Materia:</label>
+                <input type="text" id="materia" formControlName="materia" required>
+                <span></span>
+            </div>
+
+            <div class="form-group">
+                <label for="grado">Grado:</label>
+                <input type="text" id="grado" formControlName="grado" required>
+                <span></span>
+            </div>
+
+            <div class="form-group">
+                <label for="anosExperiencia">Años de Experiencia:</label>
+                <input type="number" id="anhosExperiencia" formControlName="anhosExperiencia" min="0" required>
+                <span></span>
+            </div>
+
+            <div class="form-group">
+                <label for="contrasena">Nueva contraseña:</label>
+                <input type="password" id="nuevaContrasena" formControlName="nuevaContrasena">
+            </div>
+            <div class="form-group">
+                <label for="confirmarContrasena">Confirmar nueva contraseña:</label>
+                <input type="password" id="confirmarContrasena" formControlName="contrasenaRep">
+            </div>
+
+            <div class="form-group">
+                <label for="confirmarCambios">Confirmar cambios:<span class="required">*</span></label>
+                <input type="password" id="confirmarCambios" formControlName="contrasenaOld" required placeholder="Introduzca su contraseña anterior para guardar los cambios.">
+                <span class="passSpan"></span>
+            </div>
+        </div>
+
+        <div style="padding-top: 1%; display:flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly; width:100%">
+            <div>
+                <button class="ButtonA" type="submit" (click)="cambiarDatosDocente()">Guardar cambios</button>
+            </div>
+            <div>
+                <button class="ButtonB" (click)="descartarCambios()">Descartar cambios</button>
+            </div>
+        </div>
+
+    </form>
+  </div>
+  <div class="footer-spacing-tag"></div>
+  <app-footer></app-footer>
+</body>

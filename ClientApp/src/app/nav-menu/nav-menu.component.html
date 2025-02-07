@@ -1,0 +1,65 @@
+<header>
+  <!-- header 1 -->
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom header1">
+    <div class="container">
+      <a class="navbar-brand header1-text" [routerLink]="['/reglamento']">Reglamento</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+        aria-label="Toggle navigation" [attr.aria-expanded]="isExpanded" (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end" [ngClass]="{ show: isExpanded }">
+        <ul class="navbar-nav flex-grow" style="padding-top: 2%;">
+          <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link header1-text-fix" [routerLink]="['/profile']">Perfil</a>
+          </li>
+          <li class="nav-item">
+            <p class="nav-link text-dark" style="cursor: default; padding-top: 0px;">|</p>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link header1-text-fix" [routerLink]="['/ayuda']">Ayuda</a>
+          </li>
+          <li class="nav-item">
+            <p class="nav-link text-dark" style="cursor: default; padding-top: 0px;">|</p>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link header1-text-fix" [routerLink]="['/login']" (click)="CerrarSesion()">Cerrar sesión</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- header 2 -->
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom header2">
+    <div class="container">
+      <div class="header2-logo" type="button" [routerLink]="['/']"></div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+        aria-label="Toggle navigation" [attr.aria-expanded]="isExpanded" (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end" [ngClass]="{ show: isExpanded }">
+        <ul class="navbar-nav flex-grow">
+          <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark" [routerLink]="['/']">Inicio</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['vacantes-disponibles']">Vacantes</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/postulaciones']">Postulaciones</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/historial-postulaciones']">Historial</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end" [ngClass]="{ show: isExpanded }">
+        <ul class="navbar-nav flex-grow">
+          <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark" href="https://scz.ucb.edu.bo/">Página oficial de la UCB</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

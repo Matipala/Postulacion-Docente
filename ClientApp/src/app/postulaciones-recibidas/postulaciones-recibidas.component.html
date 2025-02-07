@@ -1,0 +1,39 @@
+<head>
+  <meta *ngIf="!role.isJefe()" http-equiv='refresh' content='0; /#/not-found'>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+  rel="stylesheet">
+
+<body style="padding-top: 50px;">
+  <div class="centerer">
+    <!-- a partir de aquí, cada bloque de texto dentro de un div estará centrado y dirigido hacia abajo -->
+
+    <div class="he-tag2">
+        <div class="my-tag">
+            <h1 class="Lora">Postulaciones a la vacante:</h1>
+          </div>
+    </div>
+
+    <div class="he-tag">
+      <p>
+        En esta página encontrará todas las solicitudes de la vacante elegida.
+      </p>
+    </div>
+    <div style="margin: 10px;"></div>
+    <div style="display:flex; flex-direction: row; flex-wrap: wrap; justify-content: center; width:60%">
+        
+        <div class="item-border" *ngFor="let postulacion of postulaciones">
+            <div class="item-margin" [routerLink]="['/revisar-postulacion', vacanteId, postulacion.postulacionId]">
+                <h5>{{ postulacion?.nombrePostulante }}: {{ postulacion?.grado }}</h5>
+                <h6>Estado: {{ postulacion?.descripcionEstado }}</h6>
+                <p class="overflow"> {{ postulacion?.descripcionDocente }} </p>
+            </div>
+        </div>
+
+    </div>
+  </div>
+  <div class="footer-spacing-tag"></div>
+  <app-footer></app-footer>
+</body>
